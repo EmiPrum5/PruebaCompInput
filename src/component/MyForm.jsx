@@ -2,7 +2,7 @@ import React, {Component, useEffect, useState} from 'react'
 
 const MyForm = (props) => {
 
-    const parsein = () => {
+    /*const parsein = () => {
         let arraux = [];
         props.datos.map((dato) => {
             arraux.push({[dato.datain] : ''}) 
@@ -12,7 +12,7 @@ const MyForm = (props) => {
         return arraux;
     }
 
-    const [datos, setDatos] = useState(props.datos);
+    const [datos, setDatos] = useState(props.datos);*/
 
     const [inputdata, setInputdata] = useState();
 
