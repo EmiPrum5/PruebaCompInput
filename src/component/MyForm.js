@@ -16,20 +16,20 @@ const MyForm = (props) => {
 
     const [inputdata, setInputdata] = useState();
 
-    const datbutton = useState(props.datbutton);
+    //const datbutton = useState(props.datbutton) //Acá está mal la forma de usar useState, el hook devuelve un array con [nombreVariableDeEstado, funcQueModifEsaVariable]
 
     const handleInputChange = ( event ) => {
         console.log( event.target.name)
         setInputdata({
             ...inputdata,
             [event.target.name] : event.target.value
-        })
+        },)
     }
     
 
     /*useEffect((event) => {
         console.log( event.target.name);
-        this.setDatos({
+        this.setDatos({  //Ojo que en componentes de Clase se utiliza unicamente el "this", en componentes función no existe ya que "this" hace referencia a un objeto y acá el componente es justamente una función
             [event.target.name] : event.target.value
         })
     })*/
@@ -42,7 +42,7 @@ const MyForm = (props) => {
 
     return(             
        <form className = "CompInput" name= "form" onSubmit = {enviarDatos}>           
-            {datos.map((dato, index) => 
+            {props.datos.map((dato, index) => 
                 <input 
                     key = {index}
                     text={dato.tinp} 
@@ -53,7 +53,7 @@ const MyForm = (props) => {
                 )                                           
             }
             <button>
-                {datbutton}
+                {props.datbutton}
             </button>
        </form>       
 
