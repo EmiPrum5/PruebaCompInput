@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.CompInput{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+
+}
